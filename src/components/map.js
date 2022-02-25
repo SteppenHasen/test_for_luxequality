@@ -1,11 +1,16 @@
-import { Map, GoogleApiWrapper } from 'google-maps-react'
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
 import React from 'react';
 
 export class Maps extends React.Component {
+    mapClicked(mapProps, map, clickEvent) {
+        let lat = clickEvent.latLng.lat()
+        let lng = clickEvent.latLng.lng()
+      }
+
     render() {
       const mapStyles = {
-        width: "80%",
-        height: "80%",
+        width: "70%",
+        height: "100vh",
       };
       return (
         <Map
@@ -13,6 +18,7 @@ export class Maps extends React.Component {
           zoom={15}
           style={mapStyles}
           initialCenter={{ lat: 48.494722, lng: 35.045639 }}
+          onClick={this.mapClicked}
         />
       );
     }
