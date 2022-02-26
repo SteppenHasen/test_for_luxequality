@@ -1,13 +1,12 @@
 import GoogleApiWrapper from './components/map';
+import Header from './components/header';
 
 import './App.css';
 
 function App() {
   return (
     <>
-      <header>
-      <h1>Map for test API</h1>
-      </header>
+      <Header />
       <div className='container'>
         <GoogleApiWrapper />
       </div>
