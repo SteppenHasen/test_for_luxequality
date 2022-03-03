@@ -10,26 +10,27 @@ export class Maps extends React.Component {
     this.state = {
       show: false,
       markerInfo: {
-        id:1,
-      name:'',
-      photo:'../public/interier/first.jpg',
-      sidephotoes: [
-        '../public/interier/second.jpg',
-        '../public/interier/third.jpg',
-        '../public/interier/fourth.jpg',
-        '../public/interier/fifth.jpg',
-        '../public/interier/sixth.jpg',
-        '../public/interier/seventh.jpg',
-        '../public/interier/eighth.jpg',
-        '../public/interier/ninth.jpg',
-        '../public/interier/tenth.jpg',
-      ],
-      description:'',
-      price:'',
-      coords:{
-        lat:48.494722,
-        lng:35.045639,
-      },
+        id:10,
+        name:'Оптика миссис Люмен',
+        photo:'../../public/interier/tenth.jpg',
+        sidephotoes: [
+          '../../public/interier/second.jpg',
+          '../../public/interier/third.jpg',
+          '../../public/interier/fourth.jpg',
+          '../../public/interier/fifth.jpg',
+          '../../public/interier/sixth.jpg',
+          '../../public/interier/seventh.jpg',
+          '../../public/interier/eighth.jpg',
+          '../../public/interier/ninth.jpg',
+          '../../public/interier/first.jpg',
+        ],
+        description:'Ваш взгляд встретится с глазами ястреба и различит призрака при расстоянии двух световых лет.',
+        adress: 'набережная Сливочной реки, улица Бравой надежд, дом № 0 перед упавшим булыжник с Зеркальной горы.',
+        price:'150',
+        coords:{
+          lat:48.474722,
+          lng:34.985639,
+        },
       }
     };
     this.showModal = this.showModal.bind(this);
@@ -52,7 +53,11 @@ export class Maps extends React.Component {
 
   markerClicked(id) {
     this.showModal()
-    this.setState({ markerInfo: markers.filter(marker => marker.id === id) });
+    let newInfo = markers.filter(marker => marker.id === id )
+    Object.keys(newInfo).forEach(key => {
+      this.setState({ markerInfo: newInfo[key] });
+    })
+    console.log(this.state.markerInfo)
   }
 
   render() {
