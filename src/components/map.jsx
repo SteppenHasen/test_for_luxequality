@@ -36,7 +36,7 @@ export class Maps extends React.Component {
       }
     };
     this.showModal = this.showModal.bind(this);
-    this.showAddForm = this.showAddForm.bind(this);
+    this.onClickHandler = this.onClickHandler.bind(this);
     this.hideModal = this.hideModal.bind(this);
   }
 
@@ -53,7 +53,8 @@ export class Maps extends React.Component {
     this.setState({ showForm: false })
   };
 
-  mapClicked(mapProps, map, clickEvent) {
+  onClickHandler(props, map, clickEvent) {
+    this.showAddForm()
     console.log(clickEvent)
   }
 
@@ -78,7 +79,7 @@ export class Maps extends React.Component {
           zoom={12}
           style={mapStyles}
           initialCenter={{ lat: 48.494722, lng: 35.045639 }}
-          onClick={this.mapClicked}
+          onClick={this.onClickHandler}
         >
           {markers.map(marker => (
               <Marker 
