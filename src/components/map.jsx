@@ -3,12 +3,14 @@ import React from 'react';
 
 import { markers } from '../markers';
 import InfoModal from './infoModal';
+import AddMarkerModal from './addNewMarkerInfo';
 
 export class Maps extends React.Component {
   constructor() {
     super();
     this.state = {
       show: false,
+      showForm:false,
       markerInfo: {
         id:10,
         name:'Оптика миссис Люмен',
@@ -34,6 +36,7 @@ export class Maps extends React.Component {
       }
     };
     this.showModal = this.showModal.bind(this);
+    this.showAddForm = this.showAddForm.bind(this);
     this.hideModal = this.hideModal.bind(this);
   }
 
@@ -41,14 +44,17 @@ export class Maps extends React.Component {
     this.setState({ show: true });
   };
 
+  showAddForm = () => {
+    this.setState({ showForm: true });
+  };
+
   hideModal = () => {
     this.setState({ show: false });
+    this.setState({ showForm: false })
   };
 
   mapClicked(mapProps, map, clickEvent) {
-    let lat = clickEvent.latLng.lat()
-    let lng = clickEvent.latLng.lng()
-      
+    console.log(clickEvent)
   }
 
   markerClicked(id) {
@@ -83,6 +89,7 @@ export class Maps extends React.Component {
             ))}
         </Map>
         <InfoModal handleClose={this.hideModal} show={this.state.show} markerInfo={this.state.markerInfo} />
+        <AddMarkerModal handleClose={this.hideModal} show={this.state.showForm} markerCoords={this.mapClicked} />
       </>
       );
     }

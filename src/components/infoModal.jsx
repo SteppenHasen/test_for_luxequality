@@ -14,8 +14,8 @@ const InfoModal = ({ handleClose, show, markerInfo }) => {
                 <p>Adress: {markerInfo.adress}</p>
                 <span>{markerInfo.price}$ per week</span>
                 <CarouselProvider className='carousel'
-                naturalSlideWidth={150}
-                naturalSlideHeight={100}
+                naturalSlideWidth={300}
+                naturalSlideHeight={200}
                 totalSlides={10}>
                     <Slider>
                     <Slide index={0}><Image className='carouselImage' src={markerInfo.photo} /></Slide>
