@@ -80,6 +80,12 @@ export class Maps extends React.Component {
       width: "70%",
       height: "100vh",
     };
+
+    let addForm
+    if (this.state.showForm) {
+      addForm = <AddMarkerModal handleClose={this.hideModal} show={this.state.showForm} markerCoords={this.state.addingLatLng} />
+    }
+
     return (
       <div className='container'>
         <Map
@@ -98,7 +104,7 @@ export class Maps extends React.Component {
             ))}
         </Map>
         <InfoModal handleClose={this.hideModal} show={this.state.show} markerInfo={this.state.markerInfo} />
-        <AddMarkerModal handleClose={this.hideModal} show={this.state.showForm} markerCoords={this.state.addingLatLng} />
+        {addForm}
       </div>
       );
     }
