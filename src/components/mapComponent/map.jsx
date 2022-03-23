@@ -1,9 +1,9 @@
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
 import React from 'react';
 
-import { markers } from '../markers';
-import InfoModal from './infoModal';
-import AddMarkerModal from './addNewMarkerInfo';
+import { markers } from '../../markers';
+import InfoModal from '../infoModal/infoModal';
+import AddMarkerModal from '../addNewMarkerInfo/addNewMarkerInfo';
 
 export class Maps extends React.Component {
   constructor() {
@@ -33,6 +33,10 @@ export class Maps extends React.Component {
           lat:48.474722,
           lng:34.985639,
         },
+      },
+      addingLatLng: {
+        lat: 0,
+        lng: 0
       }
     };
     this.showModal = this.showModal.bind(this);
@@ -53,9 +57,13 @@ export class Maps extends React.Component {
     this.setState({ showForm: false })
   };
 
+  setAddingLatLng = (lat, lng) => {
+    this.setState({ addingLatLng: {lat: lat, lng: lng} })
+  }
+
   onClickHandler(props, map, clickEvent) {
     this.showAddForm()
-    console.log(clickEvent)
+    this.setAddingLatLng(clickEvent.latLng.lat(), clickEvent.latLng.lng())
   }
 
   markerClicked(id) {
@@ -64,7 +72,6 @@ export class Maps extends React.Component {
     Object.keys(newInfo).forEach(key => {
       this.setState({ markerInfo: newInfo[key] });
     })
-    console.log(this.state.markerInfo)
   }
 
   render() {
@@ -90,7 +97,7 @@ export class Maps extends React.Component {
             ))}
         </Map>
         <InfoModal handleClose={this.hideModal} show={this.state.show} markerInfo={this.state.markerInfo} />
-        <AddMarkerModal handleClose={this.hideModal} show={this.state.showForm} markerCoords={this.mapClicked} />
+        <AddMarkerModal handleClose={this.hideModal} show={this.state.showForm} markerCoords={this.state.markerInfo} />
       </>
       );
     }

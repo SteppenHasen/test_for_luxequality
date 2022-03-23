@@ -1,5 +1,5 @@
 import React from 'react';
-import FormInput from './formInput';
+import FormInput from '../baseComponents/formInput';
 
 const AddMarkerModal = ({ handleClose, show, markerCoords }) => {
     const showHideClassName = show ? "display-block" : "display-none";

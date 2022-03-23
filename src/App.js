@@ -1,5 +1,5 @@
-import GoogleApiWrapper from './components/map';
-import Header from './components/header';
+import GoogleApiWrapper from './components/mapComponent/map';
+import Header from './components/baseComponents/header';
 
 import './App.css';
 
