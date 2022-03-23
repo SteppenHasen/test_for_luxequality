@@ -1,3 +1,5 @@
+import './formInput.css'
+
 export default function FormInput(props) {
     const {
       label, 
@@ -9,7 +11,7 @@ export default function FormInput(props) {
   
     return (
       <div className="FormInput">
-        <label>{label}</label>
+        <label>{label}:</label>
         <input
           type={type}
           name={name}

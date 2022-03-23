@@ -49,6 +49,7 @@ export class Maps extends React.Component {
   };
 
   showAddForm = () => {
+    console.log(this.state.addingLatLng)
     this.setState({ showForm: true });
   };
 
@@ -62,8 +63,8 @@ export class Maps extends React.Component {
   }
 
   onClickHandler(props, map, clickEvent) {
-    this.showAddForm()
     this.setAddingLatLng(clickEvent.latLng.lat(), clickEvent.latLng.lng())
+    this.showAddForm()
   }
 
   markerClicked(id) {
@@ -80,7 +81,7 @@ export class Maps extends React.Component {
       height: "100vh",
     };
     return (
-      <>
+      <div className='container'>
         <Map
           google={this.props.google}
           zoom={12}
@@ -97,8 +98,8 @@ export class Maps extends React.Component {
             ))}
         </Map>
         <InfoModal handleClose={this.hideModal} show={this.state.show} markerInfo={this.state.markerInfo} />
-        <AddMarkerModal handleClose={this.hideModal} show={this.state.showForm} markerCoords={this.state.markerInfo} />
-      </>
+        <AddMarkerModal handleClose={this.hideModal} show={this.state.showForm} markerCoords={this.state.addingLatLng} />
+      </div>
       );
     }
   }

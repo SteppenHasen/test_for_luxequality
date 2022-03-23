@@ -1,0 +1,37 @@
+.addingForm {
+    z-index: 999999;
+    position: absolute;
+    width: 50vw;
+    height: 70vh;
+    padding: 20px;
+    margin-top: 5%;
+    margin-left: 25%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+    background-color:#9cacbf;
+    color: aliceblue;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+ textarea {
+    width: 250px;
+    height: 100px;
+    padding: 10px;
+    margin-left: 80px;
+    border: none;
+    border-radius: 10px;
+}
+.buttonAddInfo {
+    width: 150px;
+    height: 40px;
+
+    border: none;
+    color: antiquewhite;
+    font-weight: 700;
+    font-size: 18px;
+    background-color: #032e42;
+    border-radius: 10px;
+}

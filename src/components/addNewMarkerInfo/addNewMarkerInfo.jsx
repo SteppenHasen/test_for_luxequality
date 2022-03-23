@@ -1,6 +1,8 @@
 import React from 'react';
 import FormInput from '../baseComponents/formInput';
 
+import './addNewMarker.css'
+
 const AddMarkerModal = ({ handleClose, show, markerCoords }) => {
     const showHideClassName = show ? "display-block" : "display-none";
 
@@ -31,29 +33,30 @@ const AddMarkerModal = ({ handleClose, show, markerCoords }) => {
 
     return (
         <div className={showHideClassName}>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='addingForm'>
                 <button className='buttonClose' type="button" onClick={handleClose}>&#10006;</button>
                 <FormInput 
-                placeholder="Name" 
-                name="name" 
-                value={form.name}
-                onChange={handleFormChange} />
+                    label="Name" 
+                    name="name" 
+                    value={form.name}
+                    onChange={handleFormChange} />
                 <textarea 
-                placeholder="Description" 
-                name="description" 
-                value={form.description}
-                onChange={handleFormChange} />
+                    placeholder="Description" 
+                    name="description" 
+                    value={form.description}
+                    onChange={handleFormChange} />
                 <FormInput 
-                placeholder="Adress" 
-                name="adress" 
-                value={form.adress}
-                onChange={handleFormChange} />
+                    label="Adress" 
+                    name="adress" 
+                    value={form.adress}
+                    onChange={handleFormChange} />
                 <FormInput 
-                placeholder="Price" 
-                name="price" 
-                type="number"
-                value={form.price}
-                onChange={handleFormChange} />
+                    label="Price" 
+                    name="price" 
+                    type="number"
+                    value={form.price}
+                    onChange={handleFormChange} />
+                    <button className='buttonAddInfo' type='submit'>Submit</button>
             </form>
         </div>
     )

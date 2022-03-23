@@ -2,6 +2,8 @@ import React from 'react';
 import { CarouselProvider, Image, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
+import './infoModal.css'
+
 const InfoModal = ({ handleClose, show, markerInfo }) => {
     const showHideClassName = show ? "display-block" : "display-none";
 
