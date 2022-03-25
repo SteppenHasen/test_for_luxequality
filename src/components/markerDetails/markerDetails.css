@@ -1,0 +1,18 @@
+.detailscontainer {
+    padding: 10px;
+    border-bottom: 2px #9cacbf solid;
+}
+.description {
+    font-size: 14px;
+}
+.smalltextline {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.small {
+    margin-top: 0;
+    font-size: 12px;
+    font-weight: 600;
+}
+.adress {padding-right: 10px;}
+img {width: 300px; height: 200px;}

@@ -4,6 +4,7 @@ import React from 'react';
 import { markers } from '../../markers';
 import InfoModal from '../infoModal/infoModal';
 import AddMarkerModal from '../addNewMarkerInfo/addNewMarkerInfo';
+import MarkerDetails from '../markerDetails/markerDeails';
 
 export class Maps extends React.Component {
   constructor() {
@@ -105,6 +106,11 @@ export class Maps extends React.Component {
         </Map>
         <InfoModal handleClose={this.hideModal} show={this.state.show} markerInfo={this.state.markerInfo} />
         {addForm}
+        <div className='markersdetails'>
+          {markers.map(marker => (
+            <MarkerDetails markerInfo={marker} key={marker.id}/>
+          ))}
+        </div>
       </div>
       );
     }

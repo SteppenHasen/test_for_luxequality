@@ -32,6 +32,15 @@ const AddMarkerModal = ({ handleClose, show, markerCoords }) => {
         form.id = id
         markers.push(form)
         id += 1 
+
+        setForm({
+            name: '',
+            description: '',
+            adress: '',
+            price: 0,
+            coords: markerCoords
+        })
+        handleClose()
     }
 
     if (show) {
