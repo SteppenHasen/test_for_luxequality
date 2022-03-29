@@ -1,4 +1,8 @@
-export const markers = [
+import { v4 as uuidv4 } from 'uuid'
+
+const markers = new Map()
+
+const markersArr = [
     {
       id:1,
       name:'Чайная у Норвежца',
@@ -230,3 +234,41 @@ export const markers = [
       },
     },
   ]
+
+markersArr.forEach(markerInfo => {
+    markers.set(markerInfo.id, markerInfo)
+})
+
+function getAllMarkers() {
+    return Array.from(markers.values());
+}
+
+function existMarkerWithID(markerID) {
+    return markers.has(markerID)
+}
+
+function addNewMarker(markerInfo) {
+    let markerID = uuidv4()
+    markers.set(
+        markerID, Object.assign(markerInfo, {
+            id: markerID,
+        })
+    );
+};
+
+function deleteMarkerById(markerID) {
+    const deleted = markers.get(markerID)
+    markers.delete(markerID)
+    return deleted
+}
+
+function getMarkerById(markerID) {
+    return markers.get(markerID)
+}
+
+export { 
+    getAllMarkers, 
+    addNewMarker,
+    existMarkerWithID,
+    deleteMarkerById,
+    getMarkerById }
