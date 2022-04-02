@@ -4,7 +4,7 @@ const markers = new Map()
 
 const markersArr = [
     {
-      id:1,
+      id:'1',
       name:'Чайная у Норвежца',
       photo:'https://github.com/SteppenHasen/test_for_luxequality/blob/master/public/interier/first.jpg?raw=true',
       sidephotoes: [
@@ -27,7 +27,7 @@ const markersArr = [
       },
     },
     {
-      id:2,
+      id:'2',
       name:'Запчасти старого фюрера',
       photo:'https://github.com/SteppenHasen/test_for_luxequality/blob/master/public/interier/second.jpg?raw=true',
       sidephotoes: [
@@ -50,7 +50,7 @@ const markersArr = [
       },
     },
     {
-      id:3,
+      id:'3',
       name:'Часовые пояса',
       photo:'https://github.com/SteppenHasen/test_for_luxequality/blob/master/public/interier/third.jpg?raw=true',
       sidephotoes: [
@@ -73,7 +73,7 @@ const markersArr = [
       },
     },
     {
-      id:4,
+      id:'4',
       name:'Инквизиция в раю',
       photo:'https://github.com/SteppenHasen/test_for_luxequality/blob/master/public/interier/fourth.jpg?raw=true',
       sidephotoes: [
@@ -96,7 +96,7 @@ const markersArr = [
       },
     },
     {
-      id:5,
+      id:'5',
       name:'Прачечная забвения',
       photo:'https://github.com/SteppenHasen/test_for_luxequality/blob/master/public/interier/fifth.jpg?raw=true',
       sidephotoes: [
@@ -119,7 +119,7 @@ const markersArr = [
       },
     },
     {
-      id:6,
+      id:'6',
       name:'Усы домовика',
       photo:'https://github.com/SteppenHasen/test_for_luxequality/blob/master/public/interier/sixth.jpg?raw=true',
       sidephotoes: [
@@ -142,7 +142,7 @@ const markersArr = [
       },
     },
     {
-      id:7,
+      id:'7',
       name:'Подошвы барона Де Ларгуа',
       photo:'https://github.com/SteppenHasen/test_for_luxequality/blob/master/public/interier/seventh.jpg?raw=true',
       sidephotoes: [
@@ -165,7 +165,7 @@ const markersArr = [
       },
     },
     {
-      id:8,
+      id:'8',
       name:'Гномий подшерсток',
       photo:'https://github.com/SteppenHasen/test_for_luxequality/blob/master/public/interier/eighth.jpg?raw=true',
       sidephotoes: [
@@ -188,7 +188,7 @@ const markersArr = [
       },
     },
     {
-      id:9,
+      id:'9',
       name:'Краски Отшельника',
       photo:'https://github.com/SteppenHasen/test_for_luxequality/blob/master/public/interier/ninth.jpg?raw=true',
       sidephotoes: [
@@ -211,7 +211,7 @@ const markersArr = [
       },
     },
     {
-      id:10,
+      id:'10',
       name:'Оптика миссис Люмен',
       photo:'https://github.com/SteppenHasen/test_for_luxequality/blob/master/public/interier/trnth.jpg?raw=true',
       sidephotoes: [
@@ -251,7 +251,7 @@ function addNewMarker(markerInfo) {
     let markerID = uuidv4()
     markers.set(
         markerID, Object.assign(markerInfo, {
-            id: markerID,
+            id:markerID,
         })
     );
 };

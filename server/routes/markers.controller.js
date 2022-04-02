@@ -3,13 +3,13 @@ import {
     addNewMarker,
     existMarkerWithID,
     deleteMarkerById,
-    getMarkerById } from '../models/markers.model'
+    getMarkerById } from '../models/markers.model.js'
 
 function httpgetAllMarkers(req, res) {
     return res.status(200).json(getAllMarkers);
 };
 
-function httpAddNewMarker() {
+function httpAddNewMarker(req, res) {
     const marker = req.body;
 
     if (!marker.description || !marker.name || !marker.adress 

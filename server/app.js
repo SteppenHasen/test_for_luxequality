@@ -3,17 +3,17 @@ import cors from 'cors'
 import path from 'path'
 import morgan from 'morgan'
 
-import markersRouter from './routes/marker.router'
+import markersRouter from './routes/marker.router.js'
 
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: 'http://localhost:8000'
 }));
 app.use(morgan('combined'));
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '..', 'public')))
+// app.use(express.static(path.join(__dirname, '..', 'public')))
 
 app.use('/markers', markersRouter)
 app.get('/*', (req, res) => {
